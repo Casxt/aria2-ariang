@@ -27,6 +27,7 @@ cd /filedisk
 sudo su sharedfile -c "mkdir aria2"
 sudo su sharedfile -c "mkdir aria2/download"
 sudo su sharedfile -c "mkdir aria2/conf"
+sudo chmod -R 775 /filedisk
 ```
 
 
