@@ -8,8 +8,7 @@ RUN apk update \
 	&& wget --no-check-certificate https://github.com/mayswind/AriaNg/releases/download/1.0.0/AriaNg-1.0.0-AllInOne.zip \
 	&& unzip AriaNg-1.0.0-AllInOne.zip -d aria-ng \
 	&& rm -rf AriaNg-1.0.0-AllInOne.zip
-RUN groupadd sharedfile && adduser --group sharedfile
-USER sharedfile
+
 COPY init.sh /aria2/init.sh
 COPY conf-temp /aria2/conf-temp
 
