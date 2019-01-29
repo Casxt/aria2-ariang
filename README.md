@@ -21,7 +21,7 @@ docker build -t forer/aria2 .
 1. Add user own the download dir
 ```
 sudo groupadd sharedfile
-useradd -g sharedfile sharedfile
+sudo adduser --system --no-create-home --disabled-login --group sharedfile
 sudo su sharedfile -c "mkdir /filedisk"
 cd /filedisk
 sudo su sharedfile -c "mkdir aria2"
@@ -39,7 +39,8 @@ sudo su sharedfile -c "mkdir aria2/conf"
 
 Run command like below(You may need to change the ports).
 ```
-docker run --name aria2-ariang \
+docker run --user=sharedfile:sharedfile \
+--name aria2-ariang \
 -p 6800:6800 -p 6801:80 \
 -v /DOWNLOAD_DIR:/filedisk/aria2/download \
 -v /CONFIG_DIR:/filedisk/aria2/conf \
