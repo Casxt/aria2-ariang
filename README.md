@@ -40,7 +40,7 @@ sudo chmod -R 775 /filedisk
 
 Run command like below(You may need to change the ports).
 ```
-docker run --user=sharedfile:sharedfile \
+docker run \
 --name aria2-ariang \
 -p 6800:6800 -p 6801:80 \
 -v /DOWNLOAD_DIR:/filedisk/aria2/download \
