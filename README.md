@@ -43,8 +43,8 @@ Run command like below(You may need to change the ports).
 docker run \
 --name aria2-ariang \
 -p 6800:6800 -p 6801:80 \
--v /DOWNLOAD_DIR:/filedisk/aria2/download \
--v /CONFIG_DIR:/filedisk/aria2/conf \
+-v /filedisk/aria2/download:/aria2/downloads \
+-v /filedisk/aria2/conf:/aria2/conf \
 -e SECRET=YOUR_SECRET_CODE forer/aria2
 ```
 After finished, open http://serverip:6880/ in your browser for visiting Aria-Ng home page, open http://serverip:6801/ to browser your downloads folder.
